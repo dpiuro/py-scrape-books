@@ -6,6 +6,7 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+from logging import disable
 
 BOT_NAME = "py_scrape_books"
 
@@ -42,29 +43,30 @@ ROBOTSTXT_OBEY = True
 #    "Accept-Language": "en",
 #}
 
-# Enable or disable spider middlewares
-# See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    "py_scrape_books.middlewares.PyScrapeBooksSpiderMiddleware": 543,
-#}
+Enable or disable spider middlewares
+See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+SPIDER_MIDDLEWARES = {
+   "py_scrape_books.middlewares.PyScrapeBooksSpiderMiddleware": 543,
+}
 
-# Enable or disable downloader middlewares
-# See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    "py_scrape_books.middlewares.PyScrapeBooksDownloaderMiddleware": 543,
-#}
 
-# Enable or disable extensions
-# See https://docs.scrapy.org/en/latest/topics/extensions.html
-#EXTENSIONS = {
-#    "scrapy.extensions.telnet.TelnetConsole": None,
-#}
+Enable or disable downloader middlewares
+See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
+DOWNLOADER_MIDDLEWARES = {
+   "py_scrape_books.middlewares.PyScrapeBooksDownloaderMiddleware": 543,
+}
 
-# Configure item pipelines
-# See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "py_scrape_books.pipelines.PyScrapeBooksPipeline": 300,
-#}
+Enable or disable extensions
+See https://docs.scrapy.org/en/latest/topics/extensions.html
+EXTENSIONS = {
+   "scrapy.extensions.telnet.TelnetConsole": None,
+}
+
+Configure item pipelines
+See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
+ITEM_PIPELINES = {
+   "py_scrape_books.pipelines.PyScrapeBooksPipeline": 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

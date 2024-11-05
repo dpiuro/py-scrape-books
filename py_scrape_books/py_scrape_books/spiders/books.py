@@ -21,7 +21,7 @@ class BooksSpider(scrapy.Spider):
         yield {
             "title": response.css("div.product_main h1::text").get(),
             "price": response.css("p.price_color::text").re_first(r"\d+\.\d+"),
-            "amount_in_stock": response.css("p.instock.availability::text").re_first("\d+"),
+            "amount_in_stock": response.css("p.instock.availability::text").re_first(r'\((\d+) available\)'),
             "rating": response.css("p.star-rating::attr(class)").re_first("star-rating (\w+)"),
             "category": response.css("ul.breadcrumb li:nth-child(3) a::text").get(),
             "description": response.css("div#product_description + p::text").get(),

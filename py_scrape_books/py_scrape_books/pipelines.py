@@ -10,4 +10,5 @@ from itemadapter import ItemAdapter
 
 class PyScrapeBooksPipeline:
     def process_item(self, item, spider):
+        item["title"] = item["title"].strip() if item["title"] else None
         return item
